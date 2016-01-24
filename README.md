@@ -7,7 +7,7 @@
 [![hex.pm](https://img.shields.io/hexpm/l/ltsv.svg)](https://github.com/ikeikeikeike/exkanji/blob/master/LICENSE)
 
 
-A Elixir library for converting between hiragana, katakana, romaji and kanji.
+A Elixir library for converting between hiragana, katakana, romaji and kanji. It uses Mecab.
 
 ## Installation
 

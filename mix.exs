@@ -2,12 +2,12 @@ defmodule Exkanji.Mixfile do
   use Mix.Project
 
   @description """
-  A Elixir library for
+  A Elixir library for converting between hiragana, katakana, romaji and kanji. It uses Mecab.
   """
 
   def project do
     [app: :exkanji,
-     version: "0.2.2",
+     version: "0.2.3",
      elixir: ">= 1.0.0",
      source_url: "https://github.com/ikeikeikeike/exromaji",
      docs: [extras: ["README.md"]],
