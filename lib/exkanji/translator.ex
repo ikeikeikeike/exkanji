@@ -25,6 +25,7 @@ defmodule Exkanji.Translator do
     |> Exromaji.romaji
   end
 
+  # TODO: replace white space to U+3000(IDEOGRAPHIC SPACE)
   defp convert(text) do
     text
     |> String.split
