@@ -1,0 +1,2 @@
+defmodule Exkanji do
+end
