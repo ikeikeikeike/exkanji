@@ -30,29 +30,6 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
 
 ## Usage
 
-will write explain
-
-```Elixir
-iex(1)> Exkanji.parse "竹藪焼けた"
-{:ok,
- [%Exkanji.Mecab{base: "竹", cform: "*", ctype: "*",
-   feature: "名詞,一般,*,*,*,*,竹,タケ,タケ", hiragana: nil,
-   pos: "名詞", pos1: "一般", pos2: "*", pos3: "*", pron: "タケ",
-   read: "タケ", romaji: nil, surface: "竹"},
-  %Exkanji.Mecab{base: "藪", cform: "*", ctype: "*",
-   feature: "名詞,固有名詞,地域,一般,*,*,藪,ヤブ,ヤブ",
-   hiragana: nil, pos: "名詞", pos1: "固有名詞", pos2: "地域",
-   pos3: "一般", pron: "ヤブ", read: "ヤブ", romaji: nil, surface: "藪"},
-  %Exkanji.Mecab{base: "焼ける", cform: "一段", ctype: "連用形",
-   feature: "動詞,自立,*,*,一段,連用形,焼ける,ヤケ,ヤケ",
-   hiragana: nil, pos: "動詞", pos1: "自立", pos2: "*", pos3: "*",
-   pron: "ヤケ", read: "ヤケ", romaji: nil, surface: "焼け"},
-  %Exkanji.Mecab{base: "た", cform: "特殊・タ", ctype: "基本形",
-   feature: "助動詞,*,*,*,特殊・タ,基本形,た,タ,タ", hiragana: nil,
-   pos: "助動詞", pos1: "*", pos2: "*", pos3: "*", pron: "タ", read: "タ",
-   romaji: nil, surface: "た"}]}
-```
-
 Exkanji provides some convinient functions in Exkanji module through Exkanji.Translator and Exkanji.Mecab.
 Those provided functions are able to translate into hiragana(ひらがな), katakana(カタカナ) and Romaji(ローマ字).
 
@@ -78,6 +55,31 @@ iex(5)> Exkanji.romaji "ａ a A ア ｱ ァ ｧ あ ぁ 亜"
 "a a a a a ァ ァ a ァ a"
 iex(6)> Exkanji.romaji "ローマ字 ろーまじ ローマジ"
 "ro-maji ro-maji ro-maji"
+```
+
+#### As a Morphological Analyzer.
+
+will write explain
+
+```Elixir
+iex(1)> Exkanji.parse "竹藪焼けた"
+{:ok,
+ [%Exkanji.Mecab{base: "竹", cform: "*", ctype: "*",
+   feature: "名詞,一般,*,*,*,*,竹,タケ,タケ", hiragana: nil,
+   pos: "名詞", pos1: "一般", pos2: "*", pos3: "*", pron: "タケ",
+   read: "タケ", romaji: nil, surface: "竹"},
+  %Exkanji.Mecab{base: "藪", cform: "*", ctype: "*",
+   feature: "名詞,固有名詞,地域,一般,*,*,藪,ヤブ,ヤブ",
+   hiragana: nil, pos: "名詞", pos1: "固有名詞", pos2: "地域",
+   pos3: "一般", pron: "ヤブ", read: "ヤブ", romaji: nil, surface: "藪"},
+  %Exkanji.Mecab{base: "焼ける", cform: "一段", ctype: "連用形",
+   feature: "動詞,自立,*,*,一段,連用形,焼ける,ヤケ,ヤケ",
+   hiragana: nil, pos: "動詞", pos1: "自立", pos2: "*", pos3: "*",
+   pron: "ヤケ", read: "ヤケ", romaji: nil, surface: "焼け"},
+  %Exkanji.Mecab{base: "た", cform: "特殊・タ", ctype: "基本形",
+   feature: "助動詞,*,*,*,特殊・タ,基本形,た,タ,タ", hiragana: nil,
+   pos: "助動詞", pos1: "*", pos2: "*", pos3: "*", pron: "タ", read: "タ",
+   romaji: nil, surface: "た"}]}
 ```
 
 [API Reference](http://hexdocs.pm/exkanji/).
