@@ -1,9 +1,8 @@
 defmodule Exkanji.Translator do
+  require Exromaji
+  alias Exkanji.Mecab
 
   @moduledoc false
-
-  alias Exkanji.Mecab
-  require Exromaji
 
   @doc false
   def katakana(text) do
