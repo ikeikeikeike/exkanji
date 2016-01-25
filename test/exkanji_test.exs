@@ -38,4 +38,8 @@ defmodule ExkanjiTest do
     assert Exkanji.romaji("片仮名 かたかな katakana") == "katakana katakana katakana"
   end
 
+  test "It keeps white spaces" do
+    assert Exkanji.romaji("片仮名 かたかな katakana") == "katakana katakana katakana"
+  end
+
 end
