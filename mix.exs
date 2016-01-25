@@ -2,7 +2,7 @@ defmodule Exkanji.Mixfile do
   use Mix.Project
 
   @description """
-  A Elixir library for converting between hiragana, katakana, romaji and kanji. It uses Mecab.
+  A Elixir library for translating between hiragana, katakana, romaji and kanji. It uses Mecab.
   """
 
   def project do
