@@ -7,6 +7,7 @@ defmodule Exkanji.Translator do
   @doc false
   def katakana(text) do
     text
+    |> Exromaji.katakana
     |> convert
     |> Exromaji.katakana
   end
@@ -14,6 +15,7 @@ defmodule Exkanji.Translator do
   @doc false
   def hiragana(text) do
     text
+    |> Exromaji.hiragana
     |> convert
     |> Exromaji.hiragana
   end
@@ -21,6 +23,7 @@ defmodule Exkanji.Translator do
   @doc false
   def romaji(text) do
     text
+    |> Exromaji.romaji
     |> convert
     |> Exromaji.romaji
   end

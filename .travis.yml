@@ -10,7 +10,7 @@ otp_release:
 
 before_install:
   - sudo apt-get update -qq
-  - sudo apt-get install mecab mecab-ipadic mecab-ipadic-utf8 -y
+  - sudo apt-get install nkf mecab mecab-ipadic mecab-ipadic-utf8 -y
 
 after_script:
   - mix deps.get --only docs
