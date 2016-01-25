@@ -30,5 +30,12 @@ defmodule ExkanjiTest do
     assert Exkanji.katakana("片仮名 かたかな katakana") == "カタカナ カタカナ カタカナ"
   end
 
+  test "Romaji: Kind of A letters" do
+    assert Exkanji.romaji("ａ a A ア ｱ ァ ｧ あ ぁ 亜") == "a a a a a ァ ァ a ァ a"
+  end
+
+  test "Romaji: Normally" do
+    assert Exkanji.romaji("片仮名 かたかな katakana") == "katakana katakana katakana"
+  end
 
 end
