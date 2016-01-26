@@ -3,6 +3,8 @@ defmodule Exkanji.Mecab do
 
   defstruct [:surface, :feature, :pos, :pos1, :pos2, :pos3, :cform, :ctype, :base, :read, :pron, :romaji, :hiragana]
 
+  @moduledoc false
+
   # TODO: can change dictionaly in option arg
   @doc false
   def parse(text, option \\ [])

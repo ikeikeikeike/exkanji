@@ -3,6 +3,11 @@ defmodule Exkanji do
   Exkanji.parse returns parsed result by mecab working.
   """
   defdelegate parse(text), to: Exkanji.Mecab, as: :parse
+  @doc """
+  Exkanji.Mecab.parse/2 has two options `:dict` and `:ext`.
+  `:dict` option makes to change that sets Mecab's dictionaly into second arguments in Exkanji.parse function.
+  `:ext` option makes to change Mecab's working, it returns result with romaji and hiragana attributes.
+  """
   defdelegate parse(text, option), to: Exkanji.Mecab, as: :parse
 
   @doc """
