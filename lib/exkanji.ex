@@ -3,6 +3,7 @@ defmodule Exkanji do
   Exkanji.parse returns parsed result by mecab working.
   """
   defdelegate parse(text), to: Exkanji.Mecab, as: :parse
+  defdelegate parse(text, option), to: Exkanji.Mecab, as: :parse
 
   @doc """
   Exkanji.romaji returns romaji text after translate working.

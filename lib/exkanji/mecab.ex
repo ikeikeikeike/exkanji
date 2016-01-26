@@ -9,8 +9,9 @@ defmodule Exkanji.Mecab do
   def parse(text, option) when is_binary(text), do: parse(to_char_list(text), option)
   def parse(text, option) when is_atom(text), do: parse(to_char_list(text), option)
   def parse(text, option) when is_list(text) do
+    dict = if option[:dict], do: [' -d', prepare(option[:dict])], else: []
     structs =
-      :os.cmd(:string.join(['echo ', prepare(text), ' | mecab'], ''))
+      :os.cmd(:string.join(['echo ', prepare(text), ' | mecab'] ++ dict, ''))
       |> to_string
       |> String.split("\n")
       |> Enum.filter_map(&(&1 != "EOS" && &1 != ""), &parse_line(&1, option))
