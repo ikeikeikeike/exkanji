@@ -28,7 +28,7 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
   $ brew install mecab mecab-ipadic
   ```
 
-## Usage
+# Usage
 
 Exkanji provides some convinient functions in Exkanji module through Exkanji.Translator and Exkanji.Mecab.
 Those provided functions are able to translate into hiragana(ひらがな), katakana(カタカナ) and Romaji(ローマ字).
@@ -57,7 +57,9 @@ iex(6)> Exkanji.romaji "ローマ字 ろーまじ ローマジ"
 "ro-maji ro-maji ro-maji"
 ```
 
-#### As a Morphological Analyzer.
+## As a Morphological Analyzer.
+
+Exkanji is capable of detecting Part-of-Speech from text, As a Morphological Analyzer. It uses Mecab.
 
 ```Elixir
 iex(1)> Exkanji.parse "エモい"
@@ -71,6 +73,8 @@ iex(1)> Exkanji.parse "エモい"
    pos: "動詞", pos1: "自立", pos2: "*", pos3: "*", pron: "イ",
    read: "イ", romaji: nil, surface: "い"}]}
 ```
+
+It also makes to change that sets Mecab's dictionaly into second arguments in Exkanji.parse function.
 
 ```Elixir
 iex(2)> Exkanji.parse "エモい", dict: "/opt/local/lib/mecab/dic/neologd-utf8"

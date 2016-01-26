@@ -10,6 +10,7 @@ defmodule Exkanji.Mecab do
   def parse(text, option) when is_atom(text), do: parse(to_char_list(text), option)
   def parse(text, option) when is_list(text) do
     dict = if option[:dict], do: [' -d', prepare(option[:dict])], else: []
+
     structs =
       :os.cmd(:string.join(['echo ', prepare(text), ' | mecab'] ++ dict, ''))
       |> to_string
@@ -31,10 +32,12 @@ defmodule Exkanji.Mecab do
     case String.split(f, ",") do
       [p, p1, p2, p3, cf, ct, b, r, pr] ->
         st = %Exkanji.Mecab{surface: s, feature: f, pos: p, pos1: p1, pos2: p2, pos3: p3, cform: cf, ctype: ct, base: b, read: r, pron: pr}
+
         w = if r, do: r, else: s
         if option[:ext], do: %{st | romaji: Exromaji.romaji(w), hiragana: Exromaji.hiragana(w)}, else: st
       [p, p1, p2, p3, cf, ct, b] ->
         st = %Exkanji.Mecab{surface: s, feature: f, pos: p, pos1: p1, pos2: p2, pos3: p3, cform: cf, ctype: ct, base: b}
+
         if option[:ext], do: %{st | romaji: Exromaji.romaji(s), hiragana: Exromaji.hiragana(s)}, else: st
       _ ->
         {:error, "cannot parse line"}
