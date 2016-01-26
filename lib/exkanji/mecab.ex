@@ -3,7 +3,7 @@ defmodule Exkanji.Mecab do
 
   defstruct [:surface, :feature, :pos, :pos1, :pos2, :pos3, :cform, :ctype, :base, :read, :pron, :romaji, :hiragana]
 
-  # TODO: can change dictionaly
+  # TODO: can change dictionaly in option arg
   @doc false
   def parse(text, option \\ [])
   def parse(text, option) when is_binary(text), do: parse(to_char_list(text), option)
