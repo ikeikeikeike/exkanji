@@ -7,7 +7,7 @@ defmodule Exkanji.Mixfile do
 
   def project do
     [app: :exkanji,
-     version: "0.2.5",
+     version: "0.2.6",
      elixir: ">= 1.0.0",
      source_url: "https://github.com/ikeikeikeike/exromaji",
      docs: [extras: ["README.md"]],
