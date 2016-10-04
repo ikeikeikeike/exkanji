@@ -7,7 +7,7 @@ defmodule Exkanji.Mixfile do
 
   def project do
     [app: :exkanji,
-     version: "0.2.6",
+     version: "0.3.0",
      elixir: ">= 1.0.0",
      source_url: "https://github.com/ikeikeikeike/exromaji",
      docs: [extras: ["README.md"]],
@@ -34,7 +34,7 @@ defmodule Exkanji.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:exromaji, "~> 0.2"},
+      {:exromaji, "~> 0.4"},
       {:earmark, "~> 0.2", only: :dev},
       {:ex_doc, "~> 0.11", only: :dev},
       {:inch_ex, only: :docs},
