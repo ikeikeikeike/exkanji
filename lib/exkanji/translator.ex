@@ -28,6 +28,14 @@ defmodule Exkanji.Translator do
     |> Exromaji.romaji
   end
 
+  @doc false
+  def sound(text) do
+    text
+    |> katakana
+    |> convert
+    |> Exromaji.sound
+  end
+
   defp convert(text) do
     case Mecab.parse(String.replace(text, " ", "{{__}}")) do
       # {:error, _reason} -> nil

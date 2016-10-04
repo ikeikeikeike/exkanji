@@ -1,7 +1,7 @@
 defmodule Exkanji.Mecab do
   require Exromaji
 
-  defstruct [:surface, :feature, :pos, :pos1, :pos2, :pos3, :cform, :ctype, :base, :read, :pron, :romaji, :hiragana]
+  defstruct [:surface, :feature, :pos, :pos1, :pos2, :pos3, :cform, :ctype, :base, :read, :pron, :romaji, :hiragana, :sound]
 
   @moduledoc false
 
@@ -36,11 +36,11 @@ defmodule Exkanji.Mecab do
         st = %Exkanji.Mecab{surface: s, feature: f, pos: p, pos1: p1, pos2: p2, pos3: p3, cform: cf, ctype: ct, base: b, read: r, pron: pr}
 
         w = if r, do: r, else: s
-        if option[:ext], do: %{st | romaji: Exromaji.romaji(w), hiragana: Exromaji.hiragana(w)}, else: st
+        if option[:ext], do: %{st | romaji: Exromaji.romaji(w), hiragana: Exromaji.hiragana(w), sound: Exromaji.sound(w)}, else: st
       [p, p1, p2, p3, cf, ct, b] ->
         st = %Exkanji.Mecab{surface: s, feature: f, pos: p, pos1: p1, pos2: p2, pos3: p3, cform: cf, ctype: ct, base: b}
 
-        if option[:ext], do: %{st | romaji: Exromaji.romaji(s), hiragana: Exromaji.hiragana(s)}, else: st
+        if option[:ext], do: %{st | romaji: Exromaji.romaji(s), hiragana: Exromaji.hiragana(s), sound: Exromaji.sound(s)}, else: st
       _ ->
         {:error, "cannot parse line"}
     end

@@ -32,4 +32,10 @@ defmodule Exkanji do
   Alias hiragana
   """
   defdelegate hira(text), to: Exkanji.Translator, as: :hiragana
+
+  @doc """
+  Exkanji.sound returns japanese sound letter with kanji that like vowels and consonants after translate working.
+  """
+  defdelegate sound(text), to: Exkanji.Translator, as: :sound
+
 end
