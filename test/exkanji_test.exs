@@ -48,4 +48,29 @@ defmodule ExkanjiTest do
     # assert length(nor) != length(new)
   # end
 
+
+  test "Sound 1" do
+    assert Exkanji.sound("ギャオス") == "か"
+  end
+
+  test "Sound 2" do
+    assert Exkanji.sound("IYカード") == "あ"
+  end
+
+  test "Sound 3" do
+    assert Exkanji.sound("Japan") == "さ"
+  end
+
+  test "Sound 4" do
+    assert Exkanji.sound("ねんとう") == "な"
+  end
+
+  test "Sound 5" do
+    assert Exkanji.sound("愛のり") == "あ"
+  end
+
+  test "Sound 6" do
+    assert Exkanji.sound("日本") == "な"
+  end
+
 end
