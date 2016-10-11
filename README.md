@@ -7,7 +7,7 @@
 [![hex.pm](https://img.shields.io/hexpm/l/ltsv.svg)](https://github.com/ikeikeikeike/exkanji/blob/master/LICENSE)
 
 
-A Elixir library for translating between hiragana, katakana, romaji and kanji. It uses Mecab.
+A Elixir library for translating between hiragana, katakana, romaji, kanji and sound. It uses Mecab.
 
 ## Installation
 
@@ -31,7 +31,7 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
 # Usage
 
 Exkanji provides some convinient functions in Exkanji module through Exkanji.Translator and Exkanji.Mecab.
-Those provided functions are able to translate into hiragana(ひらがな), katakana(カタカナ) and Romaji(ローマ字).
+Those provided functions are able to translate into hiragana(ひらがな), katakana(カタカナ), romaji(ローマ字) and sound(五十音).
 
 Into hiragana(ひらがな)
 ```Elixir
@@ -49,12 +49,20 @@ iex(4)> Exkanji.katakana "片仮名 かたかな katakana"
 "カタカナ カタカナ カタカナ"
 ```
 
-Into Romaji(ローマ字)
+Into romaji(ローマ字)
 ```Elixir
 iex(5)> Exkanji.romaji "ａ a A ア ｱ ァ ｧ あ ぁ 亜"
 "a a a a a ァ ァ a ァ a"
 iex(6)> Exkanji.romaji "ローマ字 ろーまじ ローマジ"
 "ro-maji ro-maji ro-maji"
+```
+
+Into sound(五十音)
+```Elixir
+iex(7)> Exkanji.sound "よろしく"
+"や"
+iex(8)> Exkanji.sound "夜露死苦"
+"や"
 ```
 
 ## As a Morphological Analyzer.
