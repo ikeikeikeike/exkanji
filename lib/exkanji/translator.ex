@@ -7,25 +7,25 @@ defmodule Exkanji.Translator do
   @doc false
   def katakana(text) do
     text
-    |> Exromaji.katakana
+    |> Exromaji.katakana()
     |> convert
-    |> Exromaji.katakana
+    |> Exromaji.katakana()
   end
 
   @doc false
   def hiragana(text) do
     text
-    |> Exromaji.hiragana
+    |> Exromaji.hiragana()
     |> convert
-    |> Exromaji.hiragana
+    |> Exromaji.hiragana()
   end
 
   @doc false
   def romaji(text) do
     text
-    |> Exromaji.romaji
+    |> Exromaji.romaji()
     |> convert
-    |> Exromaji.romaji
+    |> Exromaji.romaji()
   end
 
   @doc false
@@ -33,7 +33,7 @@ defmodule Exkanji.Translator do
     text
     |> katakana
     |> convert
-    |> Exromaji.sound
+    |> Exromaji.sound()
   end
 
   defp convert(text) do
@@ -41,11 +41,11 @@ defmodule Exkanji.Translator do
       # {:error, _reason} -> nil
       {:ok, lines} ->
         lines
-        |> Enum.map(fn(l) ->
+        |> Enum.map(fn l ->
           if l.read, do: l.read, else: l.surface
         end)
         |> Enum.map(&String.replace(&1, "{{__}}", " "))
-        |> Enum.join
+        |> Enum.join()
     end
   end
 end

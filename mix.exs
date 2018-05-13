@@ -6,14 +6,16 @@ defmodule Exkanji.Mixfile do
   """
 
   def project do
-    [app: :exkanji,
-     version: "0.3.1",
-     elixir: ">= 1.0.0",
-     source_url: "https://github.com/ikeikeikeike/exromaji",
-     docs: [extras: ["README.md"]],
-     description: @description,
-     package: package,
-     deps: deps]
+    [
+      app: :exkanji,
+      version: "1.0.0",
+      elixir: ">= 1.0.0",
+      source_url: "https://github.com/ikeikeikeike/exromaji",
+      docs: [extras: ["README.md"]],
+      description: @description,
+      package: package(),
+      deps: deps()
+    ]
   end
 
   # Configuration for the OTP application
@@ -34,18 +36,18 @@ defmodule Exkanji.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:exromaji, "~> 0.4"},
-      {:earmark, "~> 0.2", only: :dev},
-      {:ex_doc, "~> 0.11", only: :dev},
-      {:inch_ex, only: :docs},
+      {:exromaji, "~> 1.0"},
+      {:earmark, ">= 0.0.0", only: :dev},
+      {:ex_doc, ">= 0.0.0", only: :dev},
+      {:inch_ex, only: :docs}
     ]
   end
 
   defp package do
-    [ maintainers: ["Tatsuo Ikeda / ikeikeikeike"],
+    [
+      maintainers: ["Tatsuo Ikeda / ikeikeikeike"],
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/ikeikeikeike/exkanji"},
+      links: %{"GitHub" => "https://github.com/ikeikeikeike/exkanji"}
     ]
   end
-
 end

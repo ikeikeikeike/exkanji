@@ -43,11 +43,10 @@ defmodule ExkanjiTest do
   end
 
   # test "it can change dictionary as required" do
-    # {:ok, nor} = Exkanji.parse "エモいオナ中がTBSマジ意味不"
-    # {:ok, new} = Exkanji.parse "エモいオナ中がTBSマジ意味不", dict: "/opt/local/lib/mecab/dic/neologd-utf8"
-    # assert length(nor) != length(new)
+  # {:ok, nor} = Exkanji.parse "エモいオナ中がTBSマジ意味不"
+  # {:ok, new} = Exkanji.parse "エモいオナ中がTBSマジ意味不", dict: "/opt/local/lib/mecab/dic/neologd-utf8"
+  # assert length(nor) != length(new)
   # end
-
 
   test "Sound 1" do
     assert Exkanji.sound("ギャオス") == "か"
@@ -72,5 +71,4 @@ defmodule ExkanjiTest do
   test "Sound 6" do
     assert Exkanji.sound("日本") == "な"
   end
-
 end
